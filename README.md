@@ -3,3 +3,4 @@ Created for myself for struggling to remember weight to progress in training and
 Workout and meal tracker + Shoping list + TODO
 
 https://fire-data-storage.web.app/
+Designed for phone usage

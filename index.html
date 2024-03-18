@@ -5,28 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workout Tracker</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
 </head>
 <body>
-    <div id="user-selection">
-        <input type="radio" id="Egis" name="user" value="Egis">
-        <label for="Egis">Egis</label>
-        <input type="radio" id="Karolis" name="user" value="Karolis">
-        <label for="Karolis">Karolis</label>
-        <input type="radio" id="Kipras" name="user" value="Kipras">
-        <label for="Kipras">Kipras</label>
-    </div>
-    <div id="Day1" class="day-container">
-        <h2>Day 1</h2>
-        <!-- Exercise containers will be populated by JavaScript -->
-    </div>
-    <div id="Day2" class="day-container">
-        <h2>Day 2</h2>
-        <!-- Exercise containers will be populated by JavaScript -->
-    </div>
-    <script src="firebase-config.js"></script>
-    <script src="script.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
 
+    <div class="swiper-container">  <div class="swiper-wrapper">
+            <h2>Gym</h2>
+            <div class="swiper-slide" id="exercises-container">
+                <canvas id="workoutChart"></canvas>
+                </div>
+                <div class="swiper-slide" id="meals-container">
+                    <h2>Meal Planner</h2>
+                    <div id="meal-planner">
+                      <div id="meals">
+                        </div>
+                      <div id="nutrition-summary">
+                        <h3>Nutrition Summary</h3>
+                        <p id="total-calories">Calories: 0</p>
+                        <p id="total-proteins">Proteins: 0g</p>
+                        <p id="total-carbs">Carbs: 0g</p>
+                        <p id="total-fats">Fats: 0g</p>
+                        <div id="selected-meal-note" style="display: block;"></div>
+                      </div>
+                    </div>
+                  </div>
+            <div class="swiper-slide" id="shopping-list-container">
+                <h2>Shop</h2>
+                <table id="shopping-list-table">
+                    <thead>
+                        <tr>
+                            <th>Productai</th>
+                            <th>1 day</th>
+                            <th>1 week</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Avokadai</td>
+                            <td>136g</td>
+                            <td>952g</td>
+                        </tr>
+                        <tr>
+                            <td>Bananai</td>
+                            <td>105g</td>
+                            <td>735g</td>
+                        </tr>
+                        <tr>
+                            <td>Morkos</td>
+                            <td>122g</td>
+                            <td>854g</td>
+                        </tr>
+                        <tr>
+                            <td>Brokoliai</td>
+                            <td>100g</td>
+                            <td>700g</td>
+                        </tr>
+                        <tr>
+                            <td>Saulėgrąžos</td>
+                            <td>100g</td>
+                            <td>700g</td>
+                        </tr>
+                        <tr>
+                            <td>Moliūgu sėklos</td>
+                            <td>20g</td>
+                            <td>140g</td>
+                        </tr>
+                        <tr>
+                            <td>Čija sėklos</td>
+                            <td>20g</td>
+                            <td>140g</td>
+                        </tr>
+                        <tr>
+                            <td>Grikiai</td>
+                            <td>120g</td>
+                            <td>840g</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Varškė, 5%</td>
+                            <td>180g</td>
+                            <td>1260g</td>
+                        </tr>
+                        <tr>
+                            <td>Kiaušiniai</td>
+                            <td>225g</td>
+                            <td>1575g</td>
+                        </tr>
+                        <tr>
+                            <td>Vištiena-kiauliena</td>
+                            <td>300g</td>
+                            <td>2100g</td>
+                        </tr>
+                        <tr>
+                            <td>Kopūstai salotomis</td>
+                            <td>50g</td>
+                            <td>350g</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="swiper-slide" id="todo-container">
+                <!-- To-Do content -->
+                <h2>To-Do</h2>
+                <input type="text" id="todoInput" placeholder="Add a new to-do...">
+                <button onclick="createTodo()">Add To-Do</button>
+                <div id="todoList">
+                    <!-- To-do items -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+
+
+
+
+    <script>
+        // Initialize Swiper
+        var swiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            initialSlide: 0, // Set Gym as the initial slide
+        });
+    </script>
 </body>
 </html>

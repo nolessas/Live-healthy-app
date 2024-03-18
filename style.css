@@ -1,87 +1,432 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: white;
+    background-color: #efe9b1; /* Adjusted background color to match menu */
+    color: rgb(0, 0, 0);
     margin: 0;
     padding: 20px;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align children horizontally */
 }
 
-#user-selection {
+
+body {
+    background-color: #dcc192; /* Soft Pink, matching the Meals tab */
+}
+
+/*  ---  start  Exercise    ---  */
+
+.workout {
+    background-color: #f2f2f2;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px; /* This line moves the content down by 100 pixels */
     display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+/*  Get low  */
+#exercises-container {
+    padding-top: 43px; /* This lowers all the content by 100px */
+    min-height: 400px; /* Example height */
+    
 }
 
-#user-selection input[type="radio"] {
+
+.swiper-wrapper {
+    position: relative; /* This makes the positioning context for the absolute elements inside */
+}
+.swiper-wrapper > h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* This ensures it sits behind other content */
+}
+
+
+  .workout h3 {
+    color: #333;
+    flex-grow: 2;
+    margin: 0;
+  }
+  
+  .workout p {
+    margin: 0 10px;
+  }
+  
+  /* Styling buttons for weight adjustments */
+  .workout button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 15px; /* Making buttons more rounded */
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  /* Increase weight button */
+  .workout .adjust-weight.increase {
+    background-color: #4CAF50; /* Green background */
+  }
+  
+  /* Decrease weight button */
+  .workout .adjust-weight.decrease {
+    background-color: #f44336; /* Red background */
+  }
+  
+  /* Hover effect for buttons */
+  .workout .adjust-weight:hover {
+    opacity: 0.8;
+  }
+
+  #workoutChart {
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+}
+  
+  /* ---    Exercise end   ---  */
+  
+
+
+
+
+
+
+
+/*  ---  start  MEALS    ---  */
+
+/*  ---  start  MEALS    ---  */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif; /* Ensures a clean, readable font */
+    font-size: 12px; /* Smaller base font size */
+}
+
+/* Meal Section changes to use grid */
+.meal-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+    grid-template-rows: auto; /* Height of rows determined by content */
+    gap: 1px; /* 1px gap between grid items */
+}
+
+/* Individual Meal Options */
+.meal-option {
+    cursor: pointer;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s;
+    text-align: center; /* Text is centered within the meal option */
+    width: auto; /* Width will be determined by the grid column size */
+    height: auto; 
+}
+
+/* Adjusting the container for the grid layout */
+#meal-planner {
+    width: 90%; /* Width of the entire planner container */
+    margin: 0 auto; /* Center the planner container within its parent */
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+#selected-meal-note {
+    margin-left: 20px;
+    font-style: italic;
+}
+
+/* Highlighted Meal Option */
+.meal-option.selected {
+    background-color: #e7cda8;
+}
+
+/* Hover Effect for Meal Options */
+.meal-option:hover {
+    background-color: #f0dabe;
+}
+
+/* Nutrition Summary */
+#nutrition-summary {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center; /* Center the text for all children of the nutrition summary */
+}
+
+#nutrition-summary h4 {
+    font-size: 16px;
+    color: #333;
+    margin-top: 10px; /* Spacing above the notes header */
+}
+
+/* Style for the meal notes container */
+.meal-note {
+    margin-bottom: 10px; /* Add space between each meal note section */
+    text-align: left; /* Align the text to the left within the note */
+}
+
+/* Style for individual notes within the container */
+.meal-note strong {
+    display: block; /* Make the meal name start on a new line */
+    margin-bottom: 5px; /* Space between the meal name and its details */
+}
+
+/* Style for individual notes */
+.nutrition-note {
+    background-color: #f9f9f9;
+    margin: 5px auto; /* Center the note within its container */
+    padding: 5px;
+    border-left: 3px solid #f0dabe;
+    font-size: 14px;
+    text-align: left; /* Align the text inside the note to the left */
+    max-width: 80%; /* Set a max-width for the notes if they are too wide */
+    display: block; /* Block display will allow margin: auto to center */
+}
+
+/*   ---   MEALS end  ---   */
+
+
+/*   ---   MEALS end  ---   */
+
+
+
+
+/*   ---  start TABS   ---   */
+
+.tab {
+    flex-grow: 1; /* Tabs take up equal width */
+    text-align: center; /* Center text */
+    padding: 10px 5px; /* Padding for touch targets */
+    font-size: 14px; /* Smaller font size for bottom nav */
+    background-color: #fff; /* Clear background */
+    color: #666; /* Less contrast for unselected tabs */
+    border-top: 3px solid transparent; /* Prepare for selection indicator */
+}
+
+.tab-container {
+    position: fixed;
+    bottom: 0; /* Stick to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox for equal spacing */
+    border-top: 1px solid #ccc; /* Border at the top */
+    background-color: #f8f8f8; /* Light background */
+}
+
+.tab.active {
+    color: #000; /* High contrast for selected tab */
+    border-top-color: #6947ff; /* Highlight for selected tab */
+}
+
+
+
+.tab:hover {
+    background-color: #dcbf2e; /* Slightly Darker Shade on Hover */
+
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Increased Shadow for Lifted Appearance */
+}
+
+
+
+
+input[type="radio"] {
     display: none; /* Hide the default radio button */
 }
 
-#user-selection label {
-    padding: 10px 20px;
-    border: 2px solid transparent;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+input[type="radio"]:checked + label {
+    background-color: #e0ba3b;
+    color: rgb(32, 31, 31);
 }
 
-#user-selection input[type="radio"]:checked + label {
-    background-color: #ff6347; /* Tomato color for the checked user */
-    border-color: #ff6347;
+/*   ---   TABS end  ---   */
+
+
+/*   ---  start SHOP   ---   */
+
+#shopping-list-table {
+    width: 100%; /* Adjust width as needed */
+
+    border-collapse: collapse;
+    background-color: #fff; /* Set a white background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures the border-radius clips the content */
 }
 
-.day-container {
-    background-color: #262626;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-h2 {
-    border-bottom: 1px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.exercise-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.exercise-container:last-child {
-    margin-bottom: 0;
-}
-
-.exercise-description {
-    flex-grow: 1;
-}
-
-.button-container {
-    display: flex;
-    gap: 10px;
-}
-
-button {
-    border: none;
-    background-color: #28a745; /* Green color for success */
+#shopping-list-table th {
+    background-color: #f0ad4e; /* Header background color */
     color: white;
+}
+
+#shopping-list-table, #shopping-list-table th, #shopping-list-table td {
+    border: 1px solid #ddd; /* Lighter border color for a softer look */
+    text-align: left;
+    padding: 8px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light background for odd rows */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff; /* White background for even rows */
+}
+
+tbody tr:hover {
+    background-color: #efe2b2; /* Highlight row on hover */
+}
+
+/* CSS to style the selected rows */
+#shopping-list-table tr.selected {
+    background-color: #ffd2a0; /* Softer selection color that fits the theme */
+}
+
+/*   ---   SHOP end  ---   */
+
+
+
+
+
+
+
+
+
+
+/*   ---  Start To-DO   ---   */
+
+
+
+/* Flex Container */
+#todo-container {
+ 
+    justify-content: right; /* Center the children horizontally */
+    align-items: right; /* Align the children vertically */
+    gap: 10px; /* Gap between the input and button */
+}
+
+
+
+/* Text input and button shared styles */
+#todoInput, .save-update-button {
+    width: 50%; /* Adjust the width as needed */
+    padding: 10px;
+    margin-top: 15px; /* Add some space above */
+    margin-bottom: 15px; /* Add some space below */
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: inline-block; /* Make sure they're treated as inline-block */
+    margin-left: 10px; /* Nudge right */
+}
+
+/* Apply slight adjustment */
+#todoInput {
+    margin-right: 5px; /* Ensure gap between input and button */
+}
+
+/* Button */
+#todo-container > button {
+    background-color: #eed2b6;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 14px; /* Adjusted for consistency */
+    width: auto; /* Auto width based on content, adjust as needed */
+}
+
+/* Additional adjustments for centering and gap */
+.save-update-button {
+    width: calc(50% - 5px); /* Adjust width to account for the gap */
+}
+
+#todoInput {
+    margin-right: 5px; /* Ensure there's a gap between input and button */
+    flex-shrink: 0; /* Prevent the input from shrinking */
+}
+
+#todo-container > button {
+    margin-left: 5px; /* Ensure there's a gap between input and button */
+    flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+  
+  .todo-item {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 15px;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Keep this to manage space between todo text and buttons */
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+  
+  .button-container {
+    margin-left: auto; /* This will push the button container to the right */
+    display: flex;
+    gap: 5px; /* This creates a small gap between your buttons */
+  }
+
+  .todo-text {
+    font-size: 14px;
+  }
+  
+  .update-button {
+    margin-left: auto;
+  }
+
+  
+  .save-update-button,
+  .update-button,
+  .delete-button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 10px;
+      /* You can add additional styling here if needed */
+  }
+
+  .update-button {
+    background-color: #f0ad4e;
+    color: #fff;
+  }
+  
+  .delete-button {
+    background-color: #d9534f;
+    color: #fff;
+  }
+  
+  .todo-update-input {
+    padding: 5px;
+    margin-right: 5px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    flex-grow: 1; /* Makes the input take up the remaining space */
+  }
+  
+  .save-update-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
-}
+    background-color: #5cb85c;
+    color: white;
+  }
+  
 
-button.fail {
-    background-color: #dc3545; /* Red color for fail */
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-button:active {
-    opacity: 0.6;
-}
-
-/* Additional styles for other elements can be added here as needed */
+/*   ---   To-DO end  ---   */

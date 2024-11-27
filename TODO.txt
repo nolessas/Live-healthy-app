@@ -1,0 +1,7 @@
+Login,
+auth, 1-2
+db to each user
+image upload, 
+workout upload,
+meal upload,
+arange workout and meals in page

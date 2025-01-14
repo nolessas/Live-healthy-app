@@ -4,3 +4,5 @@ Workout and meal tracker + Shoping list + TODO
 
 https://fire-data-storage.web.app/
 Designed for phone usage
+
+SignUp requires my Auth
